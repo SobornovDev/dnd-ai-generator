@@ -1,1 +1,1 @@
-rootProject.name = "rate-limiter"
+rootProject.name = "dnd-AI-generator"
