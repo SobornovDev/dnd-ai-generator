@@ -1,11 +1,11 @@
-package sobornov.rate_limiter
+package sobornov.dndaigenerator
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class RateLimiterApplication
+class AiGeneratorApplication
 
-fun main(args: Array<String>) {
-	runApplication<RateLimiterApplication>(*args)
+fun main() {
+    runApplication<AiGeneratorApplication>()
 }

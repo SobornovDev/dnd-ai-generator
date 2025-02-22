@@ -25,6 +25,9 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
+
+	implementation("com.aallam.openai:openai-client:4.0.0")
 
 	runtimeOnly("org.slf4j:slf4j-api:2.0.7")
 	detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
