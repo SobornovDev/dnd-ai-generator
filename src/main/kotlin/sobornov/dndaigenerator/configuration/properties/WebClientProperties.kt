@@ -1,4 +1,4 @@
-package sobornov.dndaigenerator.configuration
+package sobornov.dndaigenerator.configuration.properties
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

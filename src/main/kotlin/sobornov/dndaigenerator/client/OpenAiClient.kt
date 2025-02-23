@@ -7,9 +7,9 @@ import org.springframework.boot.convert.DurationStyle
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Mono
-import sobornov.dndaigenerator.configuration.WebClientProperties
+import sobornov.dndaigenerator.configuration.properties.WebClientProperties
 import sobornov.dndaigenerator.exception.GenerationException
-import sobornov.dndaigenerator.model.response.OpenAiResponse
+import sobornov.dndaigenerator.model.openai.OpenAiResponse
 
 @Service
 class OpenAiClient(

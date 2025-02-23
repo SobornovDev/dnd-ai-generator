@@ -14,8 +14,7 @@ enum class CharacterClass(private val value: String) {
     ROGUE("rogue"),
     SORCERER("sorcerer"),
     WARLOCK("warlock"),
-    WIZARD("wizard"),
-    ARTIFICER("artificer");
+    WIZARD("wizard");
 
     @JsonValue
     fun getValue(): String = value

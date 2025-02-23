@@ -8,7 +8,7 @@ data class CharacterRequest(
     val id: String = UUID.randomUUID().toString(),
     val name: String?,
     val specie: Specie?,
-    val `class`: CharacterClass?,
+    val `class`: CharacterClass,
     @Valid
     val attributes: Attributes?,
     val alignment: Alignment?

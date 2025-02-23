@@ -3,11 +3,20 @@ spring:
     name: dnd-AI-generator
   ai:
     openai:
-      api-key: api
-
+      api-key:
 web:
   timeout: 60s
   url: https://api.openai.com/v1/chat/completions
   openai:
     api-key: ${spring.ai.openai.api-key}
+
+rest:
+  timeout: 60s
+  url: https://www.dnd5eapi.co
+  spells: /api/2014/classes/{index}/spellcasting
+
+threads:
+  core-pool-size: 4
+  max-pool-size: 8
+  queue-capacity: 50
 
