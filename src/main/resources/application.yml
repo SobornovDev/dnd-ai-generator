@@ -14,6 +14,7 @@ rest:
   timeout: 60s
   url: https://www.dnd5eapi.co
   spells: /api/2014/classes/{index}/spellcasting
+  spell-book: /api/2014/spells?level={level}&school={school}
 
 threads:
   core-pool-size: 4

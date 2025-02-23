@@ -13,9 +13,9 @@ class WebUtils {
 
     private val log: Logger = LoggerFactory.getLogger(WebUtils::class.java)
 
-    fun <T> handle(
+    suspend fun <T> fetch(
         requestId: String,
-        getResponse: () -> Mono<T>
+        getResponse: suspend () -> Mono<T>
     ): Mono<ResponseEntity<*>> {
         log.info("Received event with id: $requestId")
         return getResponse().map { response ->

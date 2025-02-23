@@ -1,4 +1,4 @@
-package sobornov.dndaigenerator.model.dndapi
+package sobornov.dndaigenerator.model.response.dndapi
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

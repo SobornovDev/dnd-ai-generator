@@ -18,6 +18,6 @@ class DndCharacterController(
 ) {
 
     @PostMapping("/generate-character")
-    fun generateCharacter(@RequestBody request: CharacterRequest): Mono<ResponseEntity<*>> =
-        utils.handle(request.id) { generator.generate(request) }
+    suspend fun generateCharacter(@RequestBody request: CharacterRequest): Mono<ResponseEntity<*>> =
+        utils.fetch(request.id) { generator.generate(request) }
 }

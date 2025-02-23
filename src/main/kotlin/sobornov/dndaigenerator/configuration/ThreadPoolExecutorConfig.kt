@@ -1,5 +1,6 @@
 package sobornov.dndaigenerator.configuration
 
+import kotlinx.coroutines.asCoroutineDispatcher
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.task.TaskExecutor
@@ -16,4 +17,8 @@ class ThreadPoolExecutorConfig(
     @Bean
     fun taskScheduler(taskExecutor: TaskExecutor) =
         Schedulers.fromExecutor(taskExecutor)
+
+    @Bean
+    fun coroutineDispatcher(taskExecutor: TaskExecutor) =
+        taskExecutor.asCoroutineDispatcher()
 }

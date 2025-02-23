@@ -1,4 +1,4 @@
-package sobornov.dndaigenerator.model.openai
+package sobornov.dndaigenerator.model.response.openai
 
 data class OpenAiResponse(
     val id: String,

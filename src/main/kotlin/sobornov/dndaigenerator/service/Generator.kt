@@ -6,5 +6,5 @@ import sobornov.dndaigenerator.model.response.CharacterResponse
 
 interface Generator {
     val model: String
-    fun generate(request: CharacterRequest): Mono<CharacterResponse>
+    suspend fun generate(request: CharacterRequest): Mono<CharacterResponse>
 }

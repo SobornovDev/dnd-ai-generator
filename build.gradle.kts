@@ -28,8 +28,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.9.0")
 
-	runtimeOnly("com.aallam.openai:openai-client-jvm:4.0.1")
 
 	runtimeOnly("org.slf4j:slf4j-api:2.0.7")
 	implementation("org.mapstruct:mapstruct:1.6.3")

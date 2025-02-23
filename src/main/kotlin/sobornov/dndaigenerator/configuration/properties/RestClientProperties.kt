@@ -7,4 +7,5 @@ class RestClientProperties {
     lateinit var timeout: String
     lateinit var url: String
     lateinit var spells: String
+    lateinit var spellBook: String
 }

@@ -1,7 +1,7 @@
 package sobornov.dndaigenerator.extension
 
 import sobornov.dndaigenerator.exception.GenerationException
-import sobornov.dndaigenerator.model.openai.OpenAiResponse
+import sobornov.dndaigenerator.model.response.openai.OpenAiResponse
 
 private const val ASSISTANT = "assistant"
 fun OpenAiResponse.getBackstory() =
