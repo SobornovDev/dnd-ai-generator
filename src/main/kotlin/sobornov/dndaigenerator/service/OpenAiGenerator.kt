@@ -27,15 +27,20 @@ class OpenAiGenerator(
             model,
             1.0
         )
-        val spells = spellService.getSpells(request.`class`).block()
-        println(spells)
-        return webClient.call(request.id, chatCompletion).map { response ->
+        val spellsResponse = spellService.getSpells(request.`class`)
+        val aiResponse = webClient.call(request.id, chatCompletion)
+
+        return Mono.zip(aiResponse, spellsResponse).map { tuple ->
+            val aiStory = tuple.t1
+            val spells = tuple.t2
             CharacterResponse(
                 requestId = request.id,
-                responseId = response.id,
-                generatedBackstory = response.getBackstory(),
+                responseId = aiStory.id,
+                generatedBackstory = aiStory.getBackstory(),
                 combatAbilities = mapOf(),
-                spells = mapOf(),
+                spells = spells.info
+                    ?.filter { !it.name.isNullOrBlank() }
+                    ?.associate { it.name!! to it.desc?.firstOrNull() },
                 dndStats = request.attributes,
                 aiGeneratedQuote = null,
                 executionTime = null

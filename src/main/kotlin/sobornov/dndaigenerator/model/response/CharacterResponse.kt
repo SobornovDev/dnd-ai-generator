@@ -7,7 +7,7 @@ data class CharacterResponse(
     val responseId: String,
     val generatedBackstory: String,
     val combatAbilities: Map<String, String>?,
-    val spells: Map<String, String>?,
+    val spells: Map<String, String?>?,
     val dndStats: Attributes?,
     val aiGeneratedQuote: String?,
     val executionTime: String?
