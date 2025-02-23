@@ -1,6 +1,8 @@
 package sobornov.dndaigenerator.model.request
 
-enum class Alignment(value: String) {
+import com.fasterxml.jackson.annotation.JsonValue
+
+enum class Alignment(private val value: String) {
     LAWFULGOOD("Lawful Good"),
     NEUTRALGOOD("Neutral Good"),
     CHAOTICGOOD("Chaotic Good"),
@@ -9,5 +11,8 @@ enum class Alignment(value: String) {
     CHAOTICNEUTRAL("Chaotic Neutral"),
     LAWFULEVIL("Lawful Evil"),
     NEUTRALEVIL("Neutral Evil"),
-    CHAOTICEVIL("Chaotic Evil"),
+    CHAOTICEVIL("Chaotic Evil");
+
+    @JsonValue
+    fun getValue(): String = value
 }

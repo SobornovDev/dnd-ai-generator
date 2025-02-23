@@ -1,6 +1,13 @@
 spring:
   application:
     name: dnd-AI-generator
+  ai:
+    openai:
+      api-key: api
 
 web:
-  timeout: 60
+  timeout: 60s
+  url: https://api.openai.com/v1/chat/completions
+  openai:
+    api-key: ${spring.ai.openai.api-key}
+

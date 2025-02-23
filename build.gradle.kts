@@ -1,5 +1,6 @@
 plugins {
 	kotlin("jvm") version "1.9.23"
+	kotlin("kapt") version "1.9.23"
 	kotlin("plugin.spring") version "1.9.23"
 	id("org.springframework.boot") version "3.4.2"
 	id("io.spring.dependency-management") version "1.1.7"
@@ -27,9 +28,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-	implementation("com.aallam.openai:openai-client:4.0.0")
+	runtimeOnly("com.aallam.openai:openai-client-jvm:4.0.1")
 
 	runtimeOnly("org.slf4j:slf4j-api:2.0.7")
+	implementation("org.mapstruct:mapstruct:1.6.3")
+	kapt("org.mapstruct:mapstruct-processor:1.6.3")
 	detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

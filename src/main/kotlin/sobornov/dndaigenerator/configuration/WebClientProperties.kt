@@ -4,5 +4,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 
 @ConfigurationProperties("web")
 class WebClientProperties {
-    val timeout: Long? = null
+    lateinit var timeout: String
+    lateinit var url: String
+
+    lateinit var openai: OpenAi
+}
+
+class OpenAi {
+    lateinit var apiKey: String
 }

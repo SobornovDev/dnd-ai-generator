@@ -1,6 +1,8 @@
 package sobornov.dndaigenerator.model.request
 
-enum class CharacterClass(value: String) {
+import com.fasterxml.jackson.annotation.JsonValue
+
+enum class CharacterClass(private val value: String) {
     FIGHTER("fighter"),
     BARBARIAN("barbarian"),
     BARD("bard"),
@@ -13,5 +15,8 @@ enum class CharacterClass(value: String) {
     SORCERER("sorcerer"),
     WARLOCK("warlock"),
     WIZARD("wizard"),
-    ARTIFICER("artificer")
+    ARTIFICER("artificer");
+
+    @JsonValue
+    fun getValue(): String = value
 }

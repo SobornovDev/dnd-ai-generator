@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import sobornov.dndaigenerator.exception.GenerationException
 import sobornov.dndaigenerator.model.request.CharacterRequest
 import sobornov.dndaigenerator.service.Generator
 
@@ -30,7 +31,7 @@ class DndCharacterController(
         log.info("Received event with id: $requestId")
         val response = getResponse()
         ResponseEntity(response, HttpStatus.OK)
-    } catch (ex: Exception) {
+    } catch (ex: GenerationException) {
         log.error("Error during event with id: $requestId, message: ${ex.message}")
         ResponseEntity(ex.message, HttpStatus.INTERNAL_SERVER_ERROR)
     }

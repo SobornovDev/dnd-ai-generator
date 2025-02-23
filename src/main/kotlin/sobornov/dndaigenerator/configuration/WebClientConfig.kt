@@ -1,16 +1,22 @@
 package sobornov.dndaigenerator.configuration
 
-import io.ktor.http.headersOf
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.client.WebClient
 
 @Configuration
-class WebClientConfig {
+class WebClientConfig(
+    private val webClientProperties: WebClientProperties
+) {
 
     @Bean
     fun webClient(builder: WebClient.Builder): WebClient =
         builder
-            .defaultHeader(headersOf("Content-Type" to listOf("application/json")).toString())
+            .defaultHeaders {
+                it.setBearerAuth(webClientProperties.openai.apiKey)
+                it.contentType = MediaType.APPLICATION_JSON
+            }
+            .baseUrl(webClientProperties.url)
             .build()
 }

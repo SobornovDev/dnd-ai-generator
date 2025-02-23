@@ -1,6 +1,8 @@
 package sobornov.dndaigenerator.model.request
 
-enum class Specie(value: String) {
+import com.fasterxml.jackson.annotation.JsonValue
+
+enum class Specie(private val value: String) {
     DWARF("dwarf"),
     ELF("elf"),
     HALFLING("halfling"),
@@ -10,5 +12,8 @@ enum class Specie(value: String) {
     TIEFLING("tiefling"),
     GOBLIN("goblin"),
     KENKU("kenku"),
-    TABAXI("tabaxi")
+    TABAXI("tabaxi");
+
+    @JsonValue
+    fun getValue(): String = value
 }
