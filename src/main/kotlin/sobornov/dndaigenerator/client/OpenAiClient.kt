@@ -28,6 +28,7 @@ class OpenAiClient(
                 log.error("Error during generation: $${context.requestId}, error: ${error.message}")
                 throw GenerationException(error.message)
             }.subscribe { response ->
+                log.info("Received aiResponse: ${response.id}")
                 context.openAiData.complete(response)
             }
 }
